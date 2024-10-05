@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { data } from "autoprefixer";
+import { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class APP extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      city: "",
+      weather: null,
+      error: null,
+    };
+  }
+
+  fetchWeatherData = () => {
+    const { city } = this.state;
+    if (!city) return;
+
+    const apiKey = "cefd9f83a8a97e9c462aeafea60dba60";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Could not fetch the Weather data for the city");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({ weather: data, error: null });
+      })
+      .catch((error) => {
+        this.setState({ error: error.message, weather: null });
+      });
+  };
+
+  render() {
+    const { city, weather, error } = this.state;
+
+    return <div></div>;
+  }
 }
-
-export default App;
