@@ -49,6 +49,20 @@ class App extends Component {
     this.fetchWeatherData();
   };
 
+  /*  getWeatherEmoji = (weatherMain) => {
+    const emojiMap = {
+      Clear: "☀️",
+      Clouds: "☁️",
+      Rain: "🌧️",
+      Snow: "❄️",
+      Thunderstorm: "⛈️",
+      Drizzle: "🌦️",
+      Mist: "🌫️",
+      Fog: "🌫️",
+    };
+    return emojiMap[weatherMain] || "🌤️";
+  }; */
+
   render() {
     const { city, weather, error } = this.state;
 
@@ -93,7 +107,7 @@ class App extends Component {
                 className="glass-button text-white py-3 px-6 rounded-xl w-full font-semibold transition-all duration-300 hover:scale-105"
                 onClick={this.handleWeatherDataSubmit}
               >
-                ✨ Get Weather Information
+                Get Weather Information
               </button>
             </form>
             {error && (
@@ -104,8 +118,9 @@ class App extends Component {
             {weather && (
               <div className="text-center weather-info">
                 <h2 className="text-2xl font-semibold mb-4 text-white drop-shadow-lg">
-                  📍{weather.name}
+                  📍{weather.name} 🌍
                 </h2>
+
                 <div className="space-y-2">
                   <p className="text-white/90 text-lg">
                     🌡️ Temperature:{" "}
