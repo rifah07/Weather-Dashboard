@@ -28,7 +28,7 @@ class App extends Component {
     fetch(apiUrl)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Could not fetch the Weather data for the city");
+          throw new Error("Could not fetch the Weather data for the city. Check if the city name is correct.");
         }
         return response.json();
       })
