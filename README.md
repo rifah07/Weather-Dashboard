@@ -28,16 +28,6 @@ A beautiful, animated weather application built with React that provides real-ti
 
 ---
 
-## 📸 Screenshots
-
-### Desktop View
-![Desktop Screenshot](https://via.placeholder.com/800x600/667eea/ffffff?text=Desktop+View)
-
-### Mobile View
-![Mobile Screenshot](https://via.placeholder.com/400x800/f093fb/ffffff?text=Mobile+View)
-
----
-
 ## 🛠️ Tech Stack
 
 | Technology           | Purpose                            |
