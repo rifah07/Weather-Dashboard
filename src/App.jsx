@@ -14,8 +14,8 @@ class App extends Component {
     const { city } = this.state;
     if (!city) return;
 
-    const apiKey ="cefd9f83a8a97e9c462aeafea60dba60";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    //const apiKey = process.env.API_KEY;
+    const apiUrl = process.env.API_URL;
 
 
     fetch(apiUrl)
