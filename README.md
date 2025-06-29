@@ -105,7 +105,6 @@ A beautiful, animated weather application built with React that provides real-ti
 ### Deploy to GitHub Pages
 
 1. **Install `gh-pages`**
-
    ```bash
    npm install gh-pages --save-dev
 2. **Update package.json**
