@@ -102,7 +102,7 @@ class App extends Component {
             {weather && (
               <div className="text-center weather-info">
                 <h2 className="text-2xl font-semibold mb-4 text-white drop-shadow-lg">
-                  📍 {weather.name}
+                  📍{weather.name}
                 </h2>
                 <div className="space-y-2">
                   <p className="text-white/90 text-lg">
