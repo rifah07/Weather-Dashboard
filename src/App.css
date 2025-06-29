@@ -1,12 +1,14 @@
-/* App.css */
+/* App.css - Enhanced Version */
 .animated-background {
   min-height: 100vh;
-  background: linear-gradient(135deg, 
-    #667eea 0%, 
-    #764ba2 25%, 
-    #f093fb 50%, 
-    #f5576c 75%, 
-    #4facfe 100%);
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 25%,
+    #f093fb 50%,
+    #f5576c 75%,
+    #4facfe 100%
+  );
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   position: relative;
@@ -14,135 +16,201 @@
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Glass morphism effect */
+/* Glass morphism effect - Enhanced */
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .glass-input {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .glass-input:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .glass-button {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.15)
+  );
   border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.glass-button:hover::before {
+  left: 100%;
 }
 
 .glass-button:hover {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.25)
+  );
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px) scale(1.02);
 }
 
-/* Floating Clouds */
+/* Enhanced Floating Clouds */
 .floating-cloud {
   position: absolute;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50px;
-  opacity: 0.7;
+  opacity: 0.8;
+  filter: blur(1px);
 }
 
 .floating-cloud::before,
 .floating-cloud::after {
-  content: '';
+  content: "";
   position: absolute;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50px;
 }
 
 .cloud1 {
-  width: 80px;
-  height: 40px;
-  top: 20%;
-  left: 10%;
-  animation: float 20s infinite ease-in-out;
+  width: 100px;
+  height: 50px;
+  top: 15%;
+  left: 5%;
+  animation: float 25s infinite ease-in-out;
 }
 
 .cloud1::before {
-  width: 50px;
-  height: 50px;
-  top: -25px;
-  left: 10px;
-}
-
-.cloud1::after {
-  width: 60px;
-  height: 40px;
-  top: -15px;
-  right: 10px;
-}
-
-.cloud2 {
-  width: 100px;
-  height: 50px;
-  top: 30%;
-  right: 15%;
-  animation: float 25s infinite ease-in-out reverse;
-}
-
-.cloud2::before {
   width: 60px;
   height: 60px;
   top: -30px;
   left: 15px;
 }
 
-.cloud2::after {
+.cloud1::after {
   width: 70px;
   height: 50px;
   top: -20px;
   right: 15px;
 }
 
-.cloud3 {
+.cloud2 {
   width: 120px;
   height: 60px;
-  top: 60%;
-  left: 20%;
-  animation: float 30s infinite ease-in-out;
+  top: 25%;
+  right: 10%;
+  animation: float 30s infinite ease-in-out reverse;
 }
 
-.cloud3::before {
+.cloud2::before {
   width: 70px;
   height: 70px;
   top: -35px;
   left: 20px;
 }
 
-.cloud3::after {
+.cloud2::after {
   width: 80px;
   height: 60px;
   top: -25px;
   right: 20px;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  25% { transform: translateX(20px) translateY(-10px); }
-  50% { transform: translateX(-15px) translateY(5px); }
-  75% { transform: translateX(10px) translateY(-5px); }
+.cloud3 {
+  width: 140px;
+  height: 70px;
+  top: 65%;
+  left: 15%;
+  animation: float 35s infinite ease-in-out;
 }
 
-/* Floating Leaves */
+.cloud3::before {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  left: 25px;
+}
+
+.cloud3::after {
+  width: 90px;
+  height: 70px;
+  top: -30px;
+  right: 25px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  25% {
+    transform: translateX(30px) translateY(-15px) scale(1.05);
+  }
+  50% {
+    transform: translateX(-20px) translateY(10px) scale(0.95);
+  }
+  75% {
+    transform: translateX(15px) translateY(-8px) scale(1.02);
+  }
+}
+
+/* Enhanced Floating Leaves */
 .floating-leaves {
   position: absolute;
   width: 100%;
@@ -152,114 +220,236 @@
 
 .leaf {
   position: absolute;
-  font-size: 1.5rem;
-  animation: leafFall 15s infinite linear;
+  font-size: 1.8rem;
+  animation: leafFall 18s infinite linear;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-.leaf1 { left: 10%; animation-delay: 0s; }
-.leaf2 { left: 25%; animation-delay: 3s; }
-.leaf3 { left: 50%; animation-delay: 6s; }
-.leaf4 { left: 75%; animation-delay: 9s; }
-.leaf5 { left: 90%; animation-delay: 12s; }
+.leaf1 {
+  left: 8%;
+  animation-delay: 0s;
+}
+.leaf2 {
+  left: 22%;
+  animation-delay: 4s;
+}
+.leaf3 {
+  left: 45%;
+  animation-delay: 8s;
+}
+.leaf4 {
+  left: 68%;
+  animation-delay: 12s;
+}
+.leaf5 {
+  left: 85%;
+  animation-delay: 16s;
+}
 
 @keyframes leafFall {
   0% {
-    transform: translateY(-100vh) rotate(0deg);
+    transform: translateY(-120vh) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
     opacity: 1;
   }
   100% {
-    transform: translateY(100vh) rotate(360deg);
+    transform: translateY(120vh) rotate(720deg) scale(1.2);
     opacity: 0;
   }
 }
 
-/* Flying Birds */
-.birds {
+/* Enhanced Flying Sunshines */
+.sunshines {
   position: absolute;
   width: 100%;
   height: 100%;
   pointer-events: none;
 }
 
-.bird {
+.sunshine {
   position: absolute;
-  font-size: 1.2rem;
-  animation: birdFly 20s infinite linear;
+  font-size: 1.5rem;
+  animation: sunFly 25s infinite linear;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.5));
 }
 
-.bird1 {
-  top: 15%;
+.sun1 {
+  top: 12%;
   animation-delay: 0s;
 }
 
-.bird2 {
-  top: 25%;
-  animation-delay: 10s;
+.sun2 {
+  top: 22%;
+  animation-delay: 8s;
 }
 
-@keyframes birdFly {
+.sun3 {
+  top: 32%;
+  animation-delay: 16s;
+}
+
+.sun4 {
+  top: 42%;
+  animation-delay: 24s;
+}
+
+@keyframes sunFly {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(-150px) scale(0.8) rotate(0deg);
     opacity: 0;
   }
-  10%, 90% {
+  10% {
     opacity: 1;
+    transform: translateX(-100px) scale(1) rotate(45deg);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(calc(100vw - 50px)) scale(1.1) rotate(315deg);
   }
   100% {
-    transform: translateX(calc(100vw + 100px));
+    transform: translateX(calc(100vw + 100px)) scale(0.8) rotate(360deg);
     opacity: 0;
   }
 }
 
-/* Weather info animation */
+/* Enhanced Weather info animation */
 .weather-info {
-  animation: slideInUp 0.6s ease-out;
+  animation: slideInUp 0.8s ease-out;
 }
 
 @keyframes slideInUp {
   from {
-    transform: translateY(30px);
+    transform: translateY(50px) scale(0.9);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
   }
 }
 
-/* Responsive adjustments */
+/* Add sparkle effects */
+.glass-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.3) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 255, 255, 0.3) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 40% 60%,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    );
+  background-size: 50px 50px, 60px 60px, 40px 40px;
+  animation: sparkle 4s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive adjustments - Enhanced */
 @media (max-width: 768px) {
+  .floating-cloud {
+    transform: scale(0.7);
+  }
+
+  .leaf {
+    font-size: 1.2rem;
+  }
+
+  .sunshine {
+    font-size: 1rem;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-background {
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+  }
+
+  .glass-card {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+  }
+
+  .glass-input,
+  .glass-button {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
   .floating-cloud {
     display: none;
   }
-  
+
   .leaf {
     font-size: 1rem;
   }
-  
-  .bird {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .animated-background {
-    background: linear-gradient(135deg, 
-      #667eea 0%, 
-      #764ba2 25%, 
-      #f093fb 50%, 
-      #f5576c 75%, 
-      #4facfe 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 10s ease infinite;
-  }
-  
-  .glass-card {
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .glass-input, .glass-button {
-    width: 100%;
+
+  .sunshine {
     font-size: 0.9rem;
   }
+
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .weather-info h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .weather-info p {
+    font-size: 1rem !important;
+  }
+}
+
+/* Add loading animation for better UX */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
 }

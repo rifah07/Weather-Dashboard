@@ -66,9 +66,11 @@ class App extends Component {
             <div className="leaf leaf4">🍃</div>
             <div className="leaf leaf5">🍂</div>
           </div>
-          <div className="birds">
-            <div className="bird bird1">🕊️</div>
-            <div className="bird bird2">🐦</div>
+          <div className="sunshines">
+            <div className="sunshine sun1">☀️</div>
+            <div className="sunshine sun2">🌤️</div>
+            <div className="sunshine sun3">🌥️</div>
+            <div className="sunshine sun4">🌦️</div>
           </div>
         </div>
 
