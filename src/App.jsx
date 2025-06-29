@@ -111,7 +111,7 @@ class App extends Component {
               </button>
             </form>
             {error && (
-              <p className="text-red-300 text-center bg-red-500/20 p-3 rounded-lg backdrop-blur-sm">
+              <p className="text-red-700 text-center bg-red-500/20 p-3 rounded-lg backdrop-blur-sm">
                 {error}
               </p>
             )}
